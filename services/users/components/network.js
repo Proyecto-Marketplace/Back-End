@@ -3,14 +3,13 @@ const response = require('../../../libs/response');
 const controller = require('./');
 const route = express.Router();
 
-route.get('/', getCategories);
+route.get('/', getUsers);
 
-async function getCategories(req, res, next){
+async function getUsers(req, res, next){
 
     try {
-        const cateries = await controller.list();
-        // const cateries = [{id: "1234", name: "jason"}];
-        response.success(req, res, cateries, 200);
+        const users = await controller.list();
+        response.success(req, res, users, 200);
     } catch (error) {
         console.log(error)
         // next(error)
