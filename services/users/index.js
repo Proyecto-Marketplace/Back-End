@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/users', users);
+app.use('/api/v1/users', users);
 const PORT = config.servicesUser.port || 5000;
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
